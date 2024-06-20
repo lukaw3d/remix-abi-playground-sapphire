@@ -23,7 +23,7 @@ web3.eth.setConfig(config)
 export class ExecutionContext {
   constructor () {
     this.event = new EventManager()
-    this.executionContext = 'vm-cancun'
+    this.executionContext = 'vm-cancun' //
     this.lastBlock = null
     this.blockGasLimitDefault = 4300000
     this.blockGasLimit = this.blockGasLimitDefault
@@ -37,7 +37,7 @@ export class ExecutionContext {
   }
 
   init (config) {
-    this.executionContext = 'vm-cancun'
+    this.executionContext = 'vm-cancun' //
     this.event.trigger('contextChanged', [this.executionContext])
   }
 

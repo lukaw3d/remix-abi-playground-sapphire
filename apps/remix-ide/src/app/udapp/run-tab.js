@@ -165,6 +165,7 @@ export class RunTab extends ViewPlugin {
       const name = 'injected-' + event.detail.info.name
       const displayName = 'Injected Provider - ' + event.detail.info.name
       await this.engine.register([new InjectedProviderDefault(event.detail.provider, name)])
+      // eip6963 - metamask
       await addProvider(0, name, displayName, true, false, false)
 
       if (event.detail.info.name === 'MetaMask') {
@@ -218,6 +219,7 @@ export class RunTab extends ViewPlugin {
     window.addEventListener(
       "eip6963:announceProvider",
       (event) => {
+        //
         registerInjectedProvider(event)
       }
     )
