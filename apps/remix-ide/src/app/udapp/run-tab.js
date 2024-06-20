@@ -194,24 +194,24 @@ export class RunTab extends ViewPlugin {
     }
 
     // VM
-    const titleVM = 'Execution environment is local to Remix.  Data is only saved to browser memory and will vanish upon reload.'
-    await addProvider(1, 'vm-cancun', 'Remix VM (Cancun)', false, true, 'cancun', 'settingsVMCancunMode', titleVM)
-    await addProvider(50, 'vm-shanghai', 'Remix VM (Shanghai)', false, true, 'shanghai', 'settingsVMShanghaiMode', titleVM)
-    await addProvider(51, 'vm-paris', 'Remix VM (Paris)', false, true, 'paris', 'settingsVMParisMode', titleVM)
-    await addProvider(52, 'vm-london', 'Remix VM (London)', false, true, 'london', 'settingsVMLondonMode', titleVM)
-    await addProvider(53, 'vm-berlin', 'Remix VM (Berlin)', false, true, 'berlin', 'settingsVMBerlinMode', titleVM)
-    await addProvider(2, 'vm-mainnet-fork', 'Remix VM - Mainnet fork', false, true, 'cancun', 'settingsVMMainnetMode', titleVM)
-    await addProvider(3, 'vm-sepolia-fork', 'Remix VM - Sepolia fork', false, true, 'cancun', 'settingsVMSepoliaMode', titleVM)
-    await addProvider(4, 'vm-custom-fork', 'Remix VM - Custom fork', false, true, '', 'settingsVMCustomMode', titleVM)
+    // const titleVM = 'Execution environment is local to Remix.  Data is only saved to browser memory and will vanish upon reload.'
+    // await addProvider(1, 'vm-cancun', 'Remix VM (Cancun)', false, true, 'cancun', 'settingsVMCancunMode', titleVM)
+    // await addProvider(50, 'vm-shanghai', 'Remix VM (Shanghai)', false, true, 'shanghai', 'settingsVMShanghaiMode', titleVM)
+    // await addProvider(51, 'vm-paris', 'Remix VM (Paris)', false, true, 'paris', 'settingsVMParisMode', titleVM)
+    // await addProvider(52, 'vm-london', 'Remix VM (London)', false, true, 'london', 'settingsVMLondonMode', titleVM)
+    // await addProvider(53, 'vm-berlin', 'Remix VM (Berlin)', false, true, 'berlin', 'settingsVMBerlinMode', titleVM)
+    // await addProvider(2, 'vm-mainnet-fork', 'Remix VM - Mainnet fork', false, true, 'cancun', 'settingsVMMainnetMode', titleVM)
+    // await addProvider(3, 'vm-sepolia-fork', 'Remix VM - Sepolia fork', false, true, 'cancun', 'settingsVMSepoliaMode', titleVM)
+    // await addProvider(4, 'vm-custom-fork', 'Remix VM - Custom fork', false, true, '', 'settingsVMCustomMode', titleVM)
 
     // wallet connect
     await addProvider(6, 'walletconnect', 'WalletConnect', false, false)
 
     // external provider
-    await addProvider(10, 'basic-http-provider', 'Custom - External Http Provider', false, false)
-    await addProvider(20, 'hardhat-provider', 'Dev - Hardhat Provider', false, false)
-    await addProvider(21, 'ganache-provider', 'Dev - Ganache Provider', false, false)
-    await addProvider(22, 'foundry-provider', 'Dev - Foundry Provider', false, false)
+    // await addProvider(10, 'basic-http-provider', 'Custom - External Http Provider', false, false)
+    // await addProvider(20, 'hardhat-provider', 'Dev - Hardhat Provider', false, false)
+    // await addProvider(21, 'ganache-provider', 'Dev - Ganache Provider', false, false)
+    // await addProvider(22, 'foundry-provider', 'Dev - Foundry Provider', false, false)
 
     // register injected providers
     
