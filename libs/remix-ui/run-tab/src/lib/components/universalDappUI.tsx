@@ -16,7 +16,7 @@ const txHelper = remixLib.execution.txHelper
 
 export function UniversalDappUI(props: UdappProps) {
   const intl = useIntl()
-  const [toggleExpander, setToggleExpander] = useState<boolean>(true)
+  const [toggleExpander, setToggleExpander] = useState<boolean>(false)
   const [contractABI, setContractABI] = useState<FuncABI[]>(null)
   const [address, setAddress] = useState<string>('')
   const [expandPath, setExpandPath] = useState<string[]>([])
@@ -25,7 +25,7 @@ export function UniversalDappUI(props: UdappProps) {
   const [evmBC, setEvmBC] = useState(null)
   const [instanceBalance, setInstanceBalance] = useState(0)
 
-  const getVersion = () => window.location.href.split('=')[5].split('+')[0].split('-')[1]
+  const getVersion = () => 'v0.8.25'
 
   useEffect(() => {
     if (!props.instance.abi) {
@@ -322,6 +322,7 @@ export function UniversalDappUI(props: UdappProps) {
 
               return (
                 <div key={index}>
+                  {/* each abi function */}
                   <ContractGUI
                     funcABI={funcABI}
                     clickCallBack={(valArray: {name: string; type: string}[], inputsValues: string) => {

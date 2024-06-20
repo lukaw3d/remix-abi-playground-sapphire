@@ -304,6 +304,7 @@ export const runTransactions = (
   else callinfo = 'transact'
   _paq.push(['trackEvent', 'udapp', callinfo, plugin.blockchain.getCurrentNetworkStatus().network.name])
 
+  // runTransactions
   const params = funcABI.type !== 'fallback' ? inputsValues : ''
   plugin.blockchain.runOrCallContractMethod(
     contractName,

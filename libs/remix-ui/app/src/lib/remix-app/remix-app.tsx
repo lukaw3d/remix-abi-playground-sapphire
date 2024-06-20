@@ -12,6 +12,8 @@ import { appProviderContextType, onLineContext, platformContext } from './contex
 import { FormattedMessage, IntlProvider } from 'react-intl'
 import { CustomTooltip } from '@remix-ui/helper'
 import { UsageTypes } from './types'
+import { UniversalDappUI } from '../../../../run-tab/src/lib/components/universalDappUI'
+import enJson from '../../../../../../apps/remix-ide/src/app/tabs/locales/en'
 
 declare global {
   interface Window {
@@ -190,4 +192,546 @@ const RemixApp = (props: IRemixAppUi) => {
   )
 }
 
+function MyRun(props: IRemixAppUi) {
+  const locale = props.app.localeModule.currentLocale()
+  return (
+    <IntlProvider locale={locale.code} messages={locale.messages}>
+      <UniversalDappUI
+        instance={{
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "bool",
+                  "name": "_booleanValue",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "int256",
+                  "name": "_integerValue",
+                  "type": "int256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "_unsignedIntegerValue",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "_addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_b32",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "string",
+                  "name": "_str",
+                  "type": "string"
+                }
+              ],
+              "name": "emitEvent1",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256[]",
+                  "name": "_uintArray",
+                  "type": "uint256[]"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "string",
+                      "name": "a",
+                      "type": "string"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint16",
+                          "name": "c",
+                          "type": "uint16"
+                        },
+                        {
+                          "internalType": "uint16[2]",
+                          "name": "d",
+                          "type": "uint16[2]"
+                        }
+                      ],
+                      "internalType": "struct TryEmitTypes.structCd",
+                      "name": "c",
+                      "type": "tuple"
+                    }
+                  ],
+                  "internalType": "struct TryEmitTypes.structAb",
+                  "name": "_structAb1",
+                  "type": "tuple"
+                }
+              ],
+              "name": "emitEvent2",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint16[2]",
+                  "name": "",
+                  "type": "uint16[2]"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "",
+                  "type": "uint16"
+                }
+              ],
+              "name": "emitUnnamed",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "uint16",
+                  "name": "",
+                  "type": "uint16"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "uint16",
+                  "name": "",
+                  "type": "uint16"
+                }
+              ],
+              "name": "TestUnnamed",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "bool",
+                  "name": "booleanValue",
+                  "type": "bool"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "int256",
+                  "name": "integerValue",
+                  "type": "int256"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "uint256",
+                  "name": "unsignedIntegerValue",
+                  "type": "uint256"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "bytes32",
+                  "name": "b32",
+                  "type": "bytes32"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "string",
+                  "name": "str",
+                  "type": "string"
+                }
+              ],
+              "name": "TryEmitTypesEvent1",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "uint256[]",
+                  "name": "uintArray",
+                  "type": "uint256[]"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "string",
+                      "name": "a",
+                      "type": "string"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint16",
+                          "name": "c",
+                          "type": "uint16"
+                        },
+                        {
+                          "internalType": "uint16[2]",
+                          "name": "d",
+                          "type": "uint16[2]"
+                        }
+                      ],
+                      "internalType": "struct TryEmitTypes.structCd",
+                      "name": "c",
+                      "type": "tuple"
+                    }
+                  ],
+                  "indexed": false,
+                  "internalType": "struct TryEmitTypes.structAb",
+                  "name": "structAb1",
+                  "type": "tuple"
+                }
+              ],
+              "name": "TryEmitTypesEvent2",
+              "type": "event"
+            }
+          ],
+          // @ts-expect-error
+          "contractData": {
+            "name": "TryEmitTypes",
+            "contract": {
+              "object": {
+                "abi": [
+                  {
+                    "inputs": [
+                      {
+                        "internalType": "bool",
+                        "name": "_booleanValue",
+                        "type": "bool"
+                      },
+                      {
+                        "internalType": "int256",
+                        "name": "_integerValue",
+                        "type": "int256"
+                      },
+                      {
+                        "internalType": "uint256",
+                        "name": "_unsignedIntegerValue",
+                        "type": "uint256"
+                      },
+                      {
+                        "internalType": "address",
+                        "name": "_addr",
+                        "type": "address"
+                      },
+                      {
+                        "internalType": "bytes32",
+                        "name": "_b32",
+                        "type": "bytes32"
+                      },
+                      {
+                        "internalType": "string",
+                        "name": "_str",
+                        "type": "string"
+                      }
+                    ],
+                    "name": "emitEvent1",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                  },
+                  {
+                    "inputs": [
+                      {
+                        "internalType": "uint256[]",
+                        "name": "_uintArray",
+                        "type": "uint256[]"
+                      },
+                      {
+                        "components": [
+                          {
+                            "internalType": "string",
+                            "name": "a",
+                            "type": "string"
+                          },
+                          {
+                            "components": [
+                              {
+                                "internalType": "uint16",
+                                "name": "c",
+                                "type": "uint16"
+                              },
+                              {
+                                "internalType": "uint16[2]",
+                                "name": "d",
+                                "type": "uint16[2]"
+                              }
+                            ],
+                            "internalType": "struct TryEmitTypes.structCd",
+                            "name": "c",
+                            "type": "tuple"
+                          }
+                        ],
+                        "internalType": "struct TryEmitTypes.structAb",
+                        "name": "_structAb1",
+                        "type": "tuple"
+                      }
+                    ],
+                    "name": "emitEvent2",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                  },
+                  {
+                    "inputs": [
+                      {
+                        "internalType": "uint16[2]",
+                        "name": "",
+                        "type": "uint16[2]"
+                      },
+                      {
+                        "internalType": "uint16",
+                        "name": "",
+                        "type": "uint16"
+                      }
+                    ],
+                    "name": "emitUnnamed",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                  },
+                  {
+                    "anonymous": false,
+                    "inputs": [
+                      {
+                        "indexed": true,
+                        "internalType": "uint16",
+                        "name": "",
+                        "type": "uint16"
+                      },
+                      {
+                        "indexed": false,
+                        "internalType": "uint16",
+                        "name": "",
+                        "type": "uint16"
+                      }
+                    ],
+                    "name": "TestUnnamed",
+                    "type": "event"
+                  },
+                  {
+                    "anonymous": false,
+                    "inputs": [
+                      {
+                        "indexed": true,
+                        "internalType": "bool",
+                        "name": "booleanValue",
+                        "type": "bool"
+                      },
+                      {
+                        "indexed": true,
+                        "internalType": "int256",
+                        "name": "integerValue",
+                        "type": "int256"
+                      },
+                      {
+                        "indexed": true,
+                        "internalType": "uint256",
+                        "name": "unsignedIntegerValue",
+                        "type": "uint256"
+                      },
+                      {
+                        "indexed": false,
+                        "internalType": "address",
+                        "name": "addr",
+                        "type": "address"
+                      },
+                      {
+                        "indexed": false,
+                        "internalType": "bytes32",
+                        "name": "b32",
+                        "type": "bytes32"
+                      },
+                      {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "str",
+                        "type": "string"
+                      }
+                    ],
+                    "name": "TryEmitTypesEvent1",
+                    "type": "event"
+                  },
+                  {
+                    "anonymous": false,
+                    "inputs": [
+                      {
+                        "indexed": false,
+                        "internalType": "uint256[]",
+                        "name": "uintArray",
+                        "type": "uint256[]"
+                      },
+                      {
+                        "components": [
+                          {
+                            "internalType": "string",
+                            "name": "a",
+                            "type": "string"
+                          },
+                          {
+                            "components": [
+                              {
+                                "internalType": "uint16",
+                                "name": "c",
+                                "type": "uint16"
+                              },
+                              {
+                                "internalType": "uint16[2]",
+                                "name": "d",
+                                "type": "uint16[2]"
+                              }
+                            ],
+                            "internalType": "struct TryEmitTypes.structCd",
+                            "name": "c",
+                            "type": "tuple"
+                          }
+                        ],
+                        "indexed": false,
+                        "internalType": "struct TryEmitTypes.structAb",
+                        "name": "structAb1",
+                        "type": "tuple"
+                      }
+                    ],
+                    "name": "TryEmitTypesEvent2",
+                    "type": "event"
+                  }
+                ],
+                "devdoc": {
+                  "kind": "dev",
+                  "methods": {},
+                  "version": 1
+                },
+                "evm": {
+                  "gasEstimates": {
+                    "creation": {
+                      "codeDepositCost": "467400",
+                      "executionCost": "503",
+                      "totalCost": "467903"
+                    },
+                    "external": {
+                      "emitEvent1(bool,int256,uint256,address,bytes32,string)": "infinite",
+                      "emitEvent2(uint256[],(string,(uint16,uint16[2])))": "infinite",
+                      "emitUnnamed(uint16[2],uint16)": "infinite"
+                    }
+                  },
+                  "methodIdentifiers": {
+                    "emitEvent1(bool,int256,uint256,address,bytes32,string)": "fd9a4262",
+                    "emitEvent2(uint256[],(string,(uint16,uint16[2])))": "19d0fd30",
+                    "emitUnnamed(uint16[2],uint16)": "1f1e626c"
+                  }
+                },
+                "storageLayout": {
+                  "storage": [],
+                  "types": null
+                },
+                "userdoc": {
+                  "kind": "user",
+                  "methods": {},
+                  "version": 1
+                }
+              },
+              "file": "TryEmitTypes.sol"
+            },
+            "compiler": {
+              "languageversion": "soljson",
+              "data": {
+                "contracts": {
+                  "TryEmitTypes.sol": {}
+                },
+                "sources": {
+                  "TryEmitTypes.sol": {
+                    "ast": {
+                      "absolutePath": "TryEmitTypes.sol",
+                      "exportedSymbols": {
+                        "TryEmitTypes": [
+                          98
+                        ]
+                      },
+                      "id": 99,
+                      "license": "Unlicense",
+                      "nodeType": "SourceUnit",
+                      "src": "38:1483:0"
+                    },
+                    "id": 0
+                  }
+                }
+              },
+              "source": {
+                "sources": {
+                  "TryEmitTypes.sol": {
+                  }
+                },
+                "target": "TryEmitTypes.sol"
+              },
+            },
+          },
+          "address": "0xEF15601B599F5C0696E38AB27f100c4075B36150",
+          "name": "TryEmitTypes",
+          "decodedResponse": {},
+          "balance": 0
+        }}
+        isPinnedContract={false}
+        context={"blockchain"}
+        removeInstance={() => {
+          console.log("removeInstance")
+          return <>removeInstance</>
+        }}
+        index={0}
+        gasEstimationPrompt={() => {
+          console.log("gasEstimationPrompt")
+          return <>gasEstimationPrompt</>
+        }}
+        passphrasePrompt={() => {
+          console.log("passphrasePrompt")
+          return <>passphrasePrompt</>
+        }}
+        mainnetPrompt={() => {
+          console.log("mainnetPrompt")
+          return <>mainnetPrompt</>
+        }}
+        runTransactions={(...args) => {
+          console.log("runTransactions", args)
+          return <>runTransactions</>
+        }}
+        // would come from section above
+        sendValue={"0"}
+        getFuncABIInputs={() => {
+          console.log("getFuncABIValues")
+          return 'getFuncABIValues'
+        }}
+        // @ts-expect-error
+        plugin={{
+          REACT_API: {
+            chainId: 'plugin.REACT_API.chainId'
+          },
+          call: async (...args) => console.log(args),
+        }}
+        exEnvironment={"injected-MetaMask"}
+        editInstance={() => {
+          console.log("editInstance")
+          return <>editInstance</>
+        }}
+      />
+    </IntlProvider>
+  )
+}
+
+// export default MyRun
 export default RemixApp

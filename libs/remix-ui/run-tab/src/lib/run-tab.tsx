@@ -252,7 +252,7 @@ export function RunTabUI(props: RunTabProps) {
     <Fragment>
       <div className="udapp_runTabView run-tab" id="runTabView" data-id="runTabView">
         <div className="list-group pb-4 list-group-flush">
-          <SettingsUI
+          <SettingsUI //
             networkName={runTab.networkName}
             personalMode={runTab.personalMode}
             selectExEnv={runTab.selectExEnv}
@@ -265,6 +265,7 @@ export function RunTabUI(props: RunTabProps) {
             gasLimit={runTab.gasLimit}
             setGasFee={setGasFeeAmount}
             providers={runTab.providers}
+            //
             setExecutionContext={setExecutionEnvironment}
             createNewBlockchainAccount={createNewAddress}
             setPassphrase={setPassphraseModal}
@@ -311,8 +312,9 @@ export function RunTabUI(props: RunTabProps) {
             count={runTab.recorder.transactionCount}
             currentFile={currentfile}
           />
-          <InstanceContainerUI
+          <InstanceContainerUI //
             plugin={plugin}
+            //
             instances={runTab.instances}
             pinnedInstances={runTab.pinnedInstances}
             clearInstances={removeInstances}

@@ -22,9 +22,83 @@ declare global {
 const _paq = window._paq = window._paq || []  //eslint-disable-line
 let plugin: RunTab, dispatch: React.Dispatch<any> = () => {}
 
+const dispatches = [
+  { type: 'SET_EXECUTION_ENVIRONMENT', payload: 'injected-MetaMask' },
+  {
+    "type": "ADD_INSTANCE",
+    "payload": {
+      "contractData": {
+        "name": "<at address>",
+        "abi": [
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "changeOwner",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
+          {
+            "anonymous": false,
+            "inputs": [
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "oldOwner",
+                "type": "address"
+              },
+              {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+              }
+            ],
+            "name": "OwnerSet",
+            "type": "event"
+          },
+          {
+            "inputs": [],
+            "name": "getOwner",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          }
+        ],
+        "contract": {
+          "file": "abi.abi"
+        }
+      },
+      "address": "0xEF15601B599F5C0696E38AB27f100c4075B36150",
+      "name": "<at address>",
+      "decodedResponse": {}
+    }
+  },
+]
+
 export const initRunTab = (udapp: RunTab) => async (reducerDispatch: React.Dispatch<any>) => {
   plugin = udapp
-  dispatch = reducerDispatch
+  dispatch = (...args) => {
+    console.trace('dispatch', ...args)
+    if (args[0].type === 'ADD_INSTANCE') debugger;
+    return reducerDispatch(...args)
+  }
   setupEvents(plugin, dispatch)
   resetAndInit(plugin)
 }

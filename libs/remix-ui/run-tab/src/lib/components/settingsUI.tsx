@@ -12,6 +12,7 @@ export function SettingsUI(props: SettingsProps) {
 
   return (
     <div className="udapp_settings">
+      {/* set metamask */}
       <EnvironmentUI selectedEnv={props.selectExEnv} providers={props.providers} setExecutionContext={props.setExecutionContext} />
       <NetworkUI networkName={props.networkName} />
       <AccountUI

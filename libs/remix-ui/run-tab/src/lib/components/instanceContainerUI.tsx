@@ -75,6 +75,30 @@ export function InstanceContainerUI(props: InstanceContainerProps) {
         <div>
           {' '}
           {props.instances.instanceList.map((instance, index) => {
+/*
+{
+  "instance": {
+    "contractData": "{abi: Array(6), bytecodeLinkReferences: {…}, byteco…}",
+    "address": "0xEF15601B599F5C0696E38AB27f100c4075B36150",
+    "name": "TryEmitTypes",
+    "decodedResponse": "{}",
+    "balance": "0"
+  },
+  "isPinnedContract": false,
+  "context": "blockchain",
+  "removeInstance": "ƒ removeSingleInstance() {}",
+  "index": 0,
+  "gasEstimationPrompt": "ƒ gasEstimationPrompt() {}",
+  "passphrasePrompt": "ƒ passphrasePrompt() {}",
+  "mainnetPrompt": "ƒ mainnetPrompt() {}",
+  "runTransactions": "ƒ executeTransactions() {}",
+  "sendValue": "0",
+  "getFuncABIInputs": "ƒ getFuncABIValues() {}",
+  "plugin": "RunTab",
+  "exEnvironment": "injected-MetaMask",
+  "editInstance": "ƒ editInstance() {}"
+}
+*/
             return (
               <UniversalDappUI
                 key={index}
